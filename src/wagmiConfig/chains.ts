@@ -1,4 +1,6 @@
 import {
+  airdaoMainnet,
+  airdaoTestnet,
   beraTestnet,
   bitfinityTestnet,
   bobaAvax,
@@ -94,7 +96,7 @@ const generateChainConfig = (
     ...chain.nativeCurrency,
     iconUrl: nativeCurrencyIconUrl,
   },
-  blockExplorerUrl: chain.blockExplorers.default.url,
+  blockExplorerUrl: chain.blockExplorers?.default.url as string,
 })
 
 const ETH_ICON =
@@ -103,6 +105,8 @@ const MATIC_ICON =
   "https://assets.coingecko.com/coins/images/4713/small/matic-token-icon.png"
 const BNB_ICON =
   "https://assets.coingecko.com/coins/images/825/small/binance-coin-logo.png"
+const AMB_ICON =
+  "https://assets.coingecko.com/coins/images/1041/small/amb.png?1696502148"
 
 const CHAIN_CONFIG: Record<Chain, GuildChain> = {
   ETHEREUM: {
@@ -552,6 +556,22 @@ const CHAIN_CONFIG: Record<Chain, GuildChain> = {
       dark: "/networkLogos/berachain.png",
     },
   },
+  AIRDAO_MAINNET: {
+    ...generateChainConfig(airdaoMainnet, AMB_ICON),
+    iconUrl: "/networkLogos/airdao.svg",
+    blockExplorerIconUrl: {
+      light: "/networkLogos/airdao.svg",
+      dark: "/networkLogos/airdao.svg",
+    },
+  },
+  AIRDAO_TESTNET: {
+    ...generateChainConfig(airdaoTestnet, AMB_ICON),
+    iconUrl: "/networkLogos/airdao.svg",
+    blockExplorerIconUrl: {
+      light: "/networkLogos/airdao.svg",
+      dark: "/networkLogos/airdao.svg",
+    },
+  },
   MANTA: {
     ...generateChainConfig(manta, ETH_ICON),
     iconUrl: "/networkLogos/manta.png",
@@ -785,6 +805,8 @@ enum Chains {
   MODE = mode.id,
   LISK = lisk.id,
   CRONOS_ZKEVM = cronoszkEVM.id,
+  AIRDAO_MAINNET = airdaoMainnet.id,
+  AIRDAO_TESTNET = airdaoTestnet.id,
 }
 
 export type Chain = keyof typeof Chains

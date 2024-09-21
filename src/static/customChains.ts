@@ -1,5 +1,53 @@
 import { Chain } from "viem"
 
+export const airdaoMainnet = {
+  id: 16718,
+  name: "AirDao Mainnet",
+  nativeCurrency: {
+    decimals: 18,
+    name: "Ambrosus",
+    symbol: "AMB",
+  },
+  rpcUrls: {
+    default: {
+      http: ["https://network.ambrosus.io"],
+    },
+  },
+  blockExplorers: {
+    default: { name: "Explorer", url: "https://airdao.io/explorer" },
+  },
+  contracts: {
+    multicall3: {
+      address: "0x3727d119E6d7a2D1112D138d2fD67CFa9BAf1AFa",
+      blockCreated: 94846,
+    },
+  },
+} as const satisfies Chain
+
+export const airdaoTestnet = {
+  id: 22040,
+  name: "AirDao Testnet",
+  nativeCurrency: {
+    decimals: 18,
+    name: "Ambrosus",
+    symbol: "AMB",
+  },
+  rpcUrls: {
+    default: {
+      http: ["https://testnet-rpc.airdao.io"],
+    },
+  },
+  blockExplorers: {
+    default: { name: "Explorer", url: "https://testnet.airdao.io/explorer" },
+  },
+  contracts: {
+    multicall3: {
+      address: "0x30699Baa31EEf684ec2656D9B57f82757c2677E9",
+      blockCreated: 94846,
+    },
+  },
+} as const satisfies Chain
+
 export const bobaAvax = {
   id: 43288,
   name: "Boba-Avax L2",

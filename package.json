@@ -17,7 +17,8 @@
     "analyze-bundle": "node scripts/bundleAnalyzer.mjs",
     "test": "npx playwright test",
     "test:ui": "npx playwright test --ui",
-    "test:debug": "npx playwright test --debug"
+    "test:debug": "npx playwright test --debug",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@bugsnag/js": "^7.22.4",
@@ -102,6 +103,7 @@
     "next-themes": "^0.3.0",
     "nextjs-toploader": "^1.6.12",
     "papaparse": "^5.4.1",
+    "patch-package": "^8.0.0",
     "posthog-js": "^1.139.3",
     "qrcode.react": "^3.1.0",
     "randombytes": "^2.1.0",

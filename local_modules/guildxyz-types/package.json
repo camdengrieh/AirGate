@@ -1,0 +1,53 @@
+{
+  "name": "@guildxyz/types",
+  "version": "1.10.14",
+  "description": "Types related to the Guild.xyz API",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup index.ts",
+    "prepublishOnly": "npm run build",
+    "test": "vitest run",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "guildxyz",
+    "guild",
+    "types"
+  ],
+  "author": "guildxyz",
+  "license": "ISC",
+  "dependencies": {
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.3"
+  },
+  "tsup": {
+    "format": [
+      "esm",
+      "cjs"
+    ],
+    "dts": {
+      "resolve": true,
+      "entry": [
+        "./index.ts"
+      ],
+      "compilerOptions": {
+        "moduleResolution": "node",
+        "strict": true,
+        "strictNullChecks": true
+      }
+    },
+    "clean": true,
+    "target": "esnext"
+  },
+  "overrides": {
+    "tsup": {
+      "rollup": "npm:@rollup/wasm-node"
+    }
+  }
+}

@@ -1,5 +1,7 @@
 import { env } from "env"
 import {
+  airdaoMainnet,
+  airdaoTestnet,
   beraTestnet,
   bitfinityTestnet,
   exosama,
@@ -190,6 +192,8 @@ export const wagmiConfig = IS_TEST
         mode,
         lisk as Chain,
         cronoszkEVM,
+        airdaoMainnet,
+        airdaoTestnet,
       ],
       transports: {
         [mainnet.id]: http(),
@@ -255,6 +259,8 @@ export const wagmiConfig = IS_TEST
         [mode.id]: http(),
         [lisk.id]: http(),
         [cronoszkEVM.id]: http(),
+        [airdaoMainnet.id]: http(),
+        [airdaoTestnet.id]: http(),
       },
       ssr: true,
       connectors: [
